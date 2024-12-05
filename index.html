@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Abir Kar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="images/image.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            font-size: 2rem;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        .manager-avatar {
+            display: block;
+            margin: 10px auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            margin: 0 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            transform: scale(1.1);
+            background-color: #ff7eb3;
+            color: white;
+        }
+
+        .tab.active {
+            background-color: #ff6f91;
+            color: white;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .photos img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Thank You Abir For 2024 🥳</header>
+    <img src="./images/image.png" alt="Manager Avatar" class="manager-avatar">
+
+    <div class="tabs">
+        <div class="tab" data-tab="detail">Details</div>
+        <div class="tab" data-tab="photos">Photos</div>
+    
+    </div>
+
+    <div class="content" id="detail">
+        <h2>Details</h2>
+        <h1>Hello Abir,</h1>
+        <p>
+            As 2024 comes to an end, I just want to say <span class="highlight">thank you</span> from the bottom of my heart. Words truly fall short in expressing how I feel. I’m still learning and growing every day, but you’ve been a silent mentor, teaching me invaluable things like patience, how to speak with people, how to address a crowd, and most importantly, how to express myself.
+        </p>
+        <p>
+            Even though we don’t talk a lot, I’ve learned so much from observing you. Your presence and support have made such a difference in my life.
+        </p>
+        <p>
+            Thank you especially for helping me this year with the WFH approvals—it meant the world to me. Your effort and understanding during that time were exactly what I needed. Saying “<span class="highlight">thank you</span>” feels like such a small word for what you’ve done, but please know it comes with so much gratitude.
+        </p>
+        <p>
+            And lastly, thank you for that beautiful, last-minute year-end surprise. If you were here in front of me, I’d give you the tightest hug and maybe even a kiss on the cheek (don’t laugh)! You made my year so special, and I’ll always cherish that.
+        </p>
+        <p class="highlight">Baki, thank you... ab pagli rulayegi kya? 🥺❤️</p>
+    </div>
+
+    <div class="content" id="photos">
+        <h2>Photos</h2>
+        <div class="photos">
+            <img src="./images/image.png" alt="Sample Photo">
+            <p>He is Mr. Manager</p>
+        </div>
+        <div class="photos">
+            <img src="./images/WhatsApp Image 2024-12-05 at 7.49.06 AM.jpeg" alt="Sample Photo">
+            <p>Aap ke saath work-life balance toh hai, bas work thoda zyada hai aur life thodi kam! 😅😂</p>
+        </div>
+        <div class="photos">
+            <img src="./images/WhatsApp Image 2024-12-05 at 7.50.35 AM.jpeg" alt="Sample Photo">
+            <p>Such a beautiful family picture! Your daughter has your smile – truly adorable! 😊</p>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tab.dataset.tab) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
